@@ -35,6 +35,9 @@ app.get('/estimate-delivery', (req, res) => {
     result = distance / 50;
   } else if (shippingMethod === 'Express') {
     result = distance / 100;
+  }else{
+    return res.send('Invalid shipping method. Use "Standard" or "Express".');
+
   }
   res.send(result.toString());
 });
